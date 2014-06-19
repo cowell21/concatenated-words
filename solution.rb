@@ -5,9 +5,9 @@ class Solution
 
 	def initialize
 		@words = File.readlines("wordsforproblem.txt").map(&:chomp).to_set
-    @concatenates = Set.new
-
-    gen_concats
+		@concatenates = Set.new
+		
+		gen_concats
 	end
 
   def gen_concats
