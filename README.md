@@ -1,5 +1,5 @@
 =====
-Find Longest Word Made of Other Words
+Words Made of Other Words
 =====
 
 Write a program that reads a file containing a sorted list of words (one word per line, no spaces, all lower case), then identifies the total count of how many of the words in the list can be constructed of other words in the list.
