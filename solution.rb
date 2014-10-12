@@ -10,34 +10,34 @@ class Solution
 		gen_concats
 	end
 
-  def gen_concats
-    @words.each do |word|
-       @concatenates.add(word) if word.length > 3 && concated?(word)
-    end
-  end
+	def gen_concats
+		@words.each do |word|
+			@concatenates.add(word) if word.length > 3 && concated?(word)
+		end
+  	end
 
-  def concated?(word)
-    (word.length - 2).times do |idx|
-       if @words.include?(word[0...(idx + 2)])
-         return true if concated_helper?(word[(idx + 2)..-1])
-       end
-    end
+	def concated?(word)
+		(word.length - 2).times do |idx|
+			if @words.include?(word[0...(idx + 2)])
+				return true if concated_helper?(word[(idx + 2)..-1])
+			end
+		end
+		
+	false
+	end
 
-    false
-  end
+	def concated_helper?(word)
+		return true if @words.include?(word)
+		return false if word.length <= 3
 
-  def concated_helper?(word)
-    return true if @words.include?(word)
-    return false if word.length <= 3
-
-    (word.length - 2).times do |idx|
-       if @words.include?(word[0...(idx + 2)])
-         return true if concated_helper?(word[(idx + 2)..-1])
-       end
-    end
-
-    false
-  end
+		(word.length - 2).times do |idx|
+			if @words.include?(word[0...(idx + 2)])
+				return true if concated_helper?(word[(idx + 2)..-1])
+			end
+		end
+		
+	false
+	end
 
 end
 
